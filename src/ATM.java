@@ -1,9 +1,12 @@
-
+import java.util.*; 
 public class ATM {
-	private String hashmap; 
+	public HashMap <String, Integer> accounts = new HashMap <String, Integer> (); 
 	
 	private void deposit (String bankAccountID, int amount)
 	{
-		if (bankAccountID )
+		if(accounts.putIfAbsent(bankAccountID, amount) != null)
+		{
+		accounts.replace(bankAccountID, accounts.get(bankAccountID)+amount); 
 	}
+}
 }
